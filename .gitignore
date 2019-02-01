@@ -1,0 +1,25 @@
+# Ideas
+.vscode/
+.idea/
+
+# Env
+env/
+.env
+
+# Python
+*.pyc
+*.log
+*.swp
+*.retry
+__pycache__
+
+# Logs
+/logs
+/data
+
+# Other
+db_data/
+
+*/media/images/*
+*/settings/local.py
+*.sqlite3

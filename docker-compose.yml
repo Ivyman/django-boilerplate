@@ -1,0 +1,37 @@
+version: '3'
+
+
+services:
+  web:
+    restart: always
+    build: .
+    env_file:
+      - ./config/.env
+    networks:
+      - db_network
+    ports:
+      - 127.0.0.1:8000:8000
+    volumes:
+      - .:/code/
+    depends_on:
+      - db
+    # fix "exited with code 0" warning
+    tty: true
+
+  # db service name === DB_SERVICE from ./config/.env
+  db:
+    restart: always
+    image: postgres:latest
+    env_file:
+      - ./config/.db_env
+    networks:
+      - db_network
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+
+networks:
+  db_network:
+    driver: bridge
+
+volumes:
+  db_data:

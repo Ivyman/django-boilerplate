@@ -1,0 +1,3 @@
+POSTGRES_DB=mysite
+POSTGRES_USER=mysite_user
+POSTGRES_PASSWORD=my$ite_pa$$
