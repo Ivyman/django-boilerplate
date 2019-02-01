@@ -1,6 +1,7 @@
 # Ideas
 .vscode/
 .idea/
+.DS_Store
 
 # Env
 env/
